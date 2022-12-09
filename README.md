@@ -44,7 +44,7 @@ Borrowed books are assigned to an user.
 A book has a shelf life.
 ```
 #### Solution
-[Snow Fall PlantUML Code](uml/BookLibrary.puml)
+[Book Library PlantUML Code](uml/BookLibrary.puml)
 ![Book Library UML](uml/BookLibrary.png "Book Library UML")
 
 ### HTML Page
