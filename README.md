@@ -1,5 +1,5 @@
 # OpenAI Examples
-A collection of [OpenAI](https://openai.com/) examples using the Python API.
+A collection of [OpenAI](https://openai.com/) examples using the Python API and the model on the web.
 
 ## Quickstart
 ### Required Packages
