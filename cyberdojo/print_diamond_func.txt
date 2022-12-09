@@ -1,0 +1,3 @@
+def solve_print_diamond(puzzle_input: str) -> str:
+    [insert]
+    return result

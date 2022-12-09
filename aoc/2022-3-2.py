@@ -1,0 +1,16 @@
+def solution_2022_3_2(input_list):
+    result = 0
+
+    for i in range(0, len(input_list), 3):
+        first_rucksack = input_list[i]
+        second_rucksack = input_list[i+1]
+        third_rucksack = input_list[i+2]
+
+        for char in first_rucksack:
+            if char in second_rucksack and char in third_rucksack:
+                if char.isupper():
+                    result += ord(char) - ord('A') + 27
+                else:
+                    result += ord(char) - ord('a') + 1
+                break
+    return result

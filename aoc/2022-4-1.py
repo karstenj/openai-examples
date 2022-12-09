@@ -1,0 +1,11 @@
+def solution_2022_4_1(input_list):
+    result = 0
+
+    for pair in input_list:
+        first, second = pair.split(',')
+        first_start, first_end = map(int, first.split('-'))
+        second_start, second_end = map(int, second.split('-'))
+
+        if first_start in range(second_start, second_end + 1) or second_start in range(first_start, first_end + 1):
+            result += 1
+    return result
