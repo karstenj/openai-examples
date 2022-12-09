@@ -1,0 +1,79 @@
+/* Snow fall on a html page
+
+1. Create a html page with a black background color
+
+2. Create a canvas in a html document which acts as background
+
+2. Generate an animation of snow fall
+
+*/
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snow Fall</title>
+  <style>
+    body {
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="snowCanvas"></canvas>
+  <script>
+    // Generate snow fall animation
+    const canvas = document.getElementById("snowCanvas");
+    const ctx = canvas.getContext("2d");
+    let snowflakes = [];
+
+    // Set canvas size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Create snowflakes
+    function Snowflake() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.radius = Math.random() * 3;
+      this.speed = Math.random() * 1;
+      this.velY = this.speed;
+    }
+
+    // Draw snowflakes
+    Snowflake.prototype.draw = function() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = "white";
+      ctx.fill();
+    };
+
+    // Update snowflakes
+    Snowflake.prototype.update = function() {
+      this.y += this.velY;
+      if (this.y + this.radius > canvas.height) {
+        this.y = 0;
+      }
+      this.draw();
+    };
+
+    // Generate snowflakes
+    function generateSnowflakes() {
+      for (let i = 0; i < 100; i++) {
+        snowflakes.push(new Snowflake());
+      }
+    }
+
+    // Animate snowflakes
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < snowflakes.length; i++) {
+        snowflakes[i].update();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    generateSnowflakes();
+    animate();
+  </script>
+</body>
+</html>

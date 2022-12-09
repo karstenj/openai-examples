@@ -1,0 +1,22 @@
+@startuml
+class Library {
+  -books: List<Book>
+  -users: List<User>
+  +registerUser(user: User)
+  +borrowBook(user: User, book: Book)
+}
+
+class User {
+  -name: String
+  -borrowedBooks: List<Book>
+}
+
+class Book {
+  -title: String
+  -shelfLife: Integer
+}
+
+Library --o User
+Library --o Book
+User --o Book
+@enduml
