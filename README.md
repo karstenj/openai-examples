@@ -13,7 +13,7 @@ A collection of [OpenAI](https://openai.com/) examples using the Python API and 
 
 ## Examples
 ### Advent of Code
-Use ostwilkens AoC solution https://github.com/ostwilkens/aoc2022.
+Based on @ostwilkens AoC solution https://github.com/ostwilkens/aoc2022.
 
 Generated solutions for Advent of Code 2022:
 * [day1/part1](aoc/2022-1-1.py)
